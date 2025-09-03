@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>YT Deduper</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 12px; width: 380px; }
+      h1 { font-size: 16px; margin: 0 0 8px; }
+      .row { display: flex; gap: 8px; flex-wrap: wrap; }
+      button { padding: 8px 10px; border: 1px solid #ccc; border-radius: 8px; background: #fff; cursor: pointer; }
+      button.primary { background: #0f63; border-color: #0f63; color: #033; font-weight: 600; }
+      button.full { background: #06c; border-color: #06c; color: #fff; font-weight: 700; }
+      .hint { color: #444; font-size: 12px; margin-top: 10px; }
+      .select { margin: 8px 0; }
+      select, input[type="number"] { width: 100%; padding: 6px; border-radius: 6px; }
+      label { font-size: 12px; color: #333; }
+      .small { font-size: 11px; color: #666; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    </style>
+  </head>
+  <body>
+    <h1>YT Playlist Deduper</h1>
+    <div class="select">
+      <label for="strategy"><b>Keep which copy?</b></label>
+      <select id="strategy">
+        <option value="first">First (top-most)</option>
+        <option value="last">Last (bottom-most)</option>
+      </select>
+    </div>
+
+    <div class="select">
+      <label for="tempsort"><b>Temporary sort for scanning</b></label>
+      <select id="tempsort">
+        <option value="pub_newest">Published date (newest)</option>
+        <option value="pub_oldest">Published date (oldest)</option>
+        <option value="oldest">Date added (oldest)</option>
+        <option value="newest">Date added (newest)</option>
+        <option value="popular">Popularity</option>
+        <option value="none">-- Don't change --</option>
+      </select>
+      <label for="scrollMinutes">Max auto-scroll time (minutes)</label>
+      <input id="scrollMinutes" type="number" min="1" max="60" value="12"/>
+    </div>
+
+    <div class="row">
+      <button id="auto" class="full">Auto: Sort → Load → Scan → Remove → Restore</button>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+      <button id="scan" class="primary">Scan & Mark</button>
+      <button id="remove">Remove Duplicates</button>
+      <button id="export">Export CSV</button>
+    </div>
+    <p class="hint">Open a playlist page like <span class="mono">youtube.com/playlist?list=...</span> before running.</p>
+    <p class="small">This build uses a “Recommended section anchor” loader to trigger lazy load reliably.</p>
+    <script src="popup.js"></script>
+  </body>
+</html>
