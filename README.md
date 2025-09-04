@@ -19,8 +19,10 @@ Works on **Firefox** and **Chromium-based browsers**.
 
 ### Firefox  
 👉 [Get it on Firefox Add-ons (AMO)](https://addons.mozilla.org/en-US/firefox/addon/youtube-playlist-deduper/)
+### Microsoft Edge Addons  
+👉 [Get it on Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/youtube-playlist-deduper/igiibekbdipfoekaknmlalhdngdebmmm)
 
-### Chromium (Chrome, Edge, etc.)
+### Chromium (Chrome, etc.)
 1. Download the latest `.zip` from [Releases](https://github.com/PoomGamerE/YouTube-Playlist-Deduper/releases).  
 2. Open `chrome://extensions/`.  
 3. Enable **Developer mode**.  
